@@ -12,7 +12,17 @@
                        <div class="link-container">
 <p>SELECTED PERFORMANCES</p>
 </div>
-        
+<style>
+        .star {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            transform: translate(-50%, -50%);
+        }
+</style>
+<div class="container">
 <p>
   June 2026 </p>
 
@@ -270,13 +280,49 @@
 <p>July 2017</p>
 
 <p>Lincoln Center, New York - premier of J Dilla Suite for Ma Dukes</p>
-
-  
-</p>
-   
+</div>
+   <br>
 <div class="link-container">
 <a href="index.html">⭑HOME⭑</a>
 </div>
-<br>
  </body>
+   <div class="overlay-text">
+   <div id="star1" class="star"></div>
+   <div id="star2" class="star"></div>
+    <div id="star3" class="star"></div>
+     <div id="star4" class="star"></div>
+      <div id="star5" class="star"></div>
+   </div>
+   <script>
+    // Function to move all stars around randomly
+    function moveStars() {
+        const stars = document.querySelectorAll('.star');
+        const maxX = window.innerWidth - 1000; // Star width
+        const maxY = window.innerHeight + 2000; // Star height
+        
+        stars.forEach(star => {
+            const x = Math.random() * maxX;
+            const y = Math.random() * maxY;
+            star.style.left = `${x}px`;
+            star.style.top = `${y}px`;
+        });
+    }
+
+    // Function to update star color based on radio button selection
+    function updateColor(event) {
+        const color = event.target.value;
+        const stars = document.querySelectorAll('.star');
+        stars.forEach(star => {
+            star.style.backgroundColor = color;
+        });
+    }
+
+    // Event listener for radio buttons
+    document.querySelectorAll('input[name="color"]').forEach(radio => {
+        radio.addEventListener('change', updateColor);
+    });
+
+    // Move stars every 2 seconds
+    setInterval(moveStars, 2000);
+</script>   
 </html>
