@@ -1,5 +1,5 @@
 body {
-    background-color: indigo;
+    background-color: grey;
     color: maroon;
     margin: 0;
     padding: 0;
@@ -15,17 +15,17 @@ p:hover {
     color:yellow
 }
 a {
-    color: red
+    color: maroon
      /* Normal link color */
 }
 a:visited {
-    color: red /* Visited link color */
+    color: maroon /* Visited link color */
 }
 a:hover {
-    color: grey; /* Hovered link color */
+    color: yellow; /* Hovered link color */
 }
 a:active {
-    color: red; /* Active (clicked) link color */
+    color: maroon; /* Active (clicked) link color */
 }
 a {
     text-align: center;
